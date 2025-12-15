@@ -1,38 +1,38 @@
-# Freight Logistics Management System
+# Система управления логистикой грузоперевозок
 
-Windows Forms application for freight logistics management in C#.
+Windows Forms приложение для управления грузоперевозками на C#.
 
-## Features
+## Функционал
 
-- Truck management (add, delete, change status)
-- Driver management (add, delete, change status)
-- Shipment creation and management
-- Assign trucks and drivers to shipments
-- Reports by period
-- Automatic data saving to file
+- Управление грузовиками (добавление, удаление, изменение статуса)
+- Управление водителями (добавление, удаление, изменение статуса)
+- Создание и управление рейсами
+- Назначение грузовиков и водителей на рейсы
+- Отчёты по периодам
+- Автоматическое сохранение данных в файл
 
-## Technologies
+## Технологии
 
 - .NET 8.0
 - Windows Forms
 - C#
 
-## Getting Started
+## Запуск
 
-1. Open the project in Visual Studio
-2. Press F5 to run
+1. Откройте проект в Visual Studio
+2. Нажмите F5 для запуска
 
-## First Launch
+## Первый запуск
 
-On first launch, the application will automatically create sample data:
-- 3 trucks
-- 3 drivers
-- 2 sample shipments
+При первом запуске приложение автоматически создаст тестовые данные:
+- 3 грузовика
+- 3 водителя
+- 2 тестовых рейса
 
-You can start using the application immediately or clear the data and add your own.
+Можно сразу начать работать с программой или очистить данные и добавить свои.
 
-## Data Storage
+## Сохранение данных
 
-Data is automatically saved to `data.txt` file when the application closes.
-The file is excluded from Git repository (see .gitignore) to keep personal data private.
+Данные автоматически сохраняются в файл `data.txt` при закрытии программы.
+Файл исключён из Git репозитория (см. .gitignore), чтобы личные данные оставались приватными.
 
