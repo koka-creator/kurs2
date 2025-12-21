@@ -14,7 +14,10 @@ jobs:
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
-          files: FreightLogistics.App.zip
+          files: |
+            FreightLogistics.App.zip
+          tag_name: ${{ github.ref_name }}
+          name: Release ${{ github.ref_name }}
           body: |
             Готовое приложение для курсовой работы.
             
