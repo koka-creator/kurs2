@@ -21,7 +21,7 @@
      - Исполняемый файл (не требует установки .NET)
      - База данных с 10 грузовиками, 10 водителями и 10 рейсами
      ```
-5. В разделе "Attach binaries" нажмите "Choose your files" и выберите файл `FreightLogistics.App.zip`
+5. В разделе "Attach binaries" нажмите "Choose your files" и выберите файл `FreightLogistics.App.zip` из **корня репозитория** (не из папки FreightLogistics.App)
 6. Нажмите "Publish release"
 
 Готово! Теперь пользователи смогут скачать готовое приложение прямо из раздела Releases.
