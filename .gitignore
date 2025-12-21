@@ -87,3 +87,6 @@ artifacts/
 data.json
 # data.txt - включен в репозиторий для курсовой работы
 
+# Publish folder
+publish/
+

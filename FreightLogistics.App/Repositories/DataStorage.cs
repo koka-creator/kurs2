@@ -26,7 +26,7 @@ namespace FreightLogistics.App.Repositories
             writer.WriteLine("[ВОДИТЕЛИ]");
             foreach (var d in driverRepo.GetAll())
             {
-                writer.WriteLine($"{d.Id},{d.FullName},{d.LicenseNumber},{d.Available}");
+                writer.WriteLine($"{d.Id},{d.FullName},,{d.Available}");
             }
 
             writer.WriteLine("[РЕЙСЫ]");
@@ -36,7 +36,7 @@ namespace FreightLogistics.App.Repositories
                 var driverId = s.DriverId?.ToString() ?? "";
                 var departure = s.DepartureTime?.ToString("yyyy-MM-dd HH:mm:ss") ?? "";
                 var arrival = s.ArrivalTime?.ToString("yyyy-MM-dd HH:mm:ss") ?? "";
-                writer.WriteLine($"{s.Id},{s.OrderNumber},{s.Cargo.Description},{s.Cargo.WeightTons},{s.Cargo.RequiresRefrigeration},{s.DistanceKm},{s.PlannedDate:yyyy-MM-dd},{truckId},{driverId},{departure},{arrival},{(int)s.Status},{s.Cost}");
+                writer.WriteLine($"{s.Id},,{s.Cargo.Description},{s.Cargo.WeightTons},{s.Cargo.RequiresRefrigeration},{s.DistanceKm},{s.PlannedDate:yyyy-MM-dd},{truckId},{driverId},{departure},{arrival},{(int)s.Status},{s.Cost}");
             }
         }
 
@@ -89,14 +89,14 @@ namespace FreightLogistics.App.Repositories
                             Status = (TruckStatus)int.Parse(parts[4])
                         });
                     }
-                    else if (currentSection == "Drivers" && parts.Length >= 4)
+                    else if (currentSection == "Drivers" && parts.Length >= 3)
                     {
                         drivers.Add(new Driver
                         {
                             Id = int.Parse(parts[0]),
                             FullName = parts[1],
-                            LicenseNumber = parts[2],
-                            Available = bool.Parse(parts[3])
+                            LicenseNumber = "",
+                            Available = parts.Length >= 4 ? bool.Parse(parts[3]) : true
                         });
                     }
                     else if (currentSection == "Shipments" && parts.Length >= 12)
@@ -104,7 +104,7 @@ namespace FreightLogistics.App.Repositories
                         shipments.Add(new Shipment
                         {
                             Id = int.Parse(parts[0]),
-                            OrderNumber = parts[1],
+                            OrderNumber = "",
                             Cargo = new Cargo
                             {
                                 Description = parts[2],
