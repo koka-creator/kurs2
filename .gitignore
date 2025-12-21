@@ -90,3 +90,7 @@ data.json
 # Publish folder
 publish/
 
+# Executable files (too large for Git, use Releases instead)
+*.exe
+!FreightLogistics.App/bin/**/*.exe
+
