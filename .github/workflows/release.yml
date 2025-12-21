@@ -11,6 +11,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       
+      - name: List files
+        run: ls -la && ls -la FreightLogistics.App.zip || echo "ZIP file not found"
+      
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
