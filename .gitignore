@@ -85,5 +85,5 @@ artifacts/
 
 # Data files
 data.json
-data.txt
+# data.txt - включен в репозиторий для курсовой работы
 
