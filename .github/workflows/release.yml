@@ -1,0 +1,33 @@
+name: Create Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: FreightLogistics.App.zip
+          body: |
+            Готовое приложение для курсовой работы.
+            
+            ## Как использовать:
+            1. Скачайте FreightLogistics.App.zip
+            2. Распакуйте архив
+            3. Запустите FreightLogistics.App.exe
+            
+            ## Что включено:
+            - Исполняемый файл (не требует установки .NET)
+            - База данных с 10 грузовиками, 10 водителями и 10 рейсами
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
